@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Spectral:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+
+@theme {
+  --font-display: "Cinzel", serif;
+  --font-serif: "Spectral", serif;
+  --font-noto: "Noto Serif", serif;
+  --font-sans: "Public Sans", sans-serif;
+
+  --color-primary: #740001;
+  --color-gold: #d4af37;
+  --color-parchment: #f4ecd8;
+  --color-magic-green: #1b5e20;
+  --color-magic-blue: #0e1a40;
+  --color-hufflepuff: #ecb939;
+}
+
+@layer base {
+  body {
+    @apply bg-parchment text-slate-900 font-serif;
+    background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
+  }
+}
+
+.parchment-card {
+  @apply bg-white/80 backdrop-blur-sm border-2 border-gold relative;
+}
+
+.parchment-card::before {
+  content: "";
+  @apply absolute inset-0.5 border border-gold/30 pointer-events-none;
+}
+
+.spell-card-glow:hover {
+  box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
